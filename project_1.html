@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic Page - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.grid {
+				display:flex;
+				flex-direction: row;
+			  	justify-content: space-evenly;
+			  	align-items: center;
+			  	flex-wrap: wrap;
+<!--			  	border: 2px solid green;-->
+			}
+			.important {
+				font-weight: bold;
+				font-style: italic;
+			}
+			.important_underlined {
+				font-weight: bold;
+				font-style: italic;
+				text-decoration: underline
+			}
+			.red_bold {
+				font-weight: bold;
+<!--				color: red;-->
+			}
+			.item {
+			  	margin: 5px auto;
+			  	padding:10px;
+			  	width: 30vw;
+<!--			  	border: 2px solid blue;-->
+			}
+			.item_3 {
+			  	margin: 5px auto;
+			  	padding:10px;
+			  	width: 20vw;
+<!--			  	border: 2px solid purple;-->
+			}
+			figure {
+				text-align: center;
+				font-style: italic;
+<!--			  	border: 2px solid red;-->
+			}
+		</style>
+	</head>
+<!--				display:flex;-->
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Projects</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">About</a></li>
+							<li><a href="cv.html">CV</a></li>
+							<li class="active"><a href="project_main.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>STATISTICAL ANALYSIS IN COMPUTATIONAL MODELING OPTIMIZATION</h1>
+									<p>
+										This project is an undergraduate research project aimed at building a computational
+										model using various parameters, and statistically analyzing the model to quantify the effect
+										of a particular parameter in creating a homogenized model.
+									</p>
+								</header>
+<!--								<br/>-->
+								<h2>OBJECTIVE</h2>
+								<p>
+									In this project, a novel approach to analyzing and optimizing the performance of a computational modeling using a statistical analysis called Monte Carlo Method will be presented. Due to the stochastic nature of the modeling process, using a statistical method is an appropriate way to measure the degree of randomness present in the model generation phase. The next section provides a brief background and motivation for the research, followed by sections which discuss how the computational model was generated and how its performance was analyzed using statistical analysis.
+								</p>
+
+								<br/>
+								<h2>BACKGROUND</h2>
+								<p>
+									Carbon nanotubes, or CNTs are tubes made of carbon with diameters measured in nanometers. Due to their exceptional electrical conductivity, tensile strength, and thermal conductivity, CNTs are used as filler in polymer composites in order to produce a hybrid material that exhibits a unique material property. For instance, when CNTs are mixed with resin, a low conductivity material, current can flow through the network of connected CNTs, significantly increasing the polymer conductivity. It can be seen from the Figure below that the CNT network acts as an electric circuit with resistors.
+								</p>
+								<br/>
+								<h3>Network of Connected CNTs</h3>
+
+								<div class="grid">
+									<figure>
+										<img class="item" src="images/page_1/resistor.png">
+										<figcaption>Graph search using bredth-first search algorithm</figcaption>
+									</figure>
+									<figure>
+										<img class="item" src="images/page_1/resistor.png">
+										<figcaption>Graph search using bredth-first search algorithm</figcaption>
+									</figure>
+								</div>
+
+								<br/>
+								<h3>Percolation threshold</h3>
+								<p>
+									Due to this unique material property, <span class="red_bold">there is a non-linear relationship between the total volume of the CNTs with respect to the base material (or filler volume fraction) and the electrical conductivity.</span> As more CNTs are added to the base material, there is a point where enough CNTs are connected so that current flows from one end to the other end through the network of connected CNTs. This point is called the Percolation Threshold, where the electrical conductivity rises substantially, as shown in Figure below:
+								</p>
+								<br />
+								<figure>
+									<img src="images/page_1/percolation_thresh.png" alt="" width="60%">
+									<figcaption>Percolation threshold graph: As the percentage of CNTs relative to the <br>
+										polymer reaches a certain threshold, conductivity spikes</figcaption>
+								</figure>
+								<br/>
+								<p>
+									To perform various what-if analysis with the CNT-embedded polymers, building a computational model that can quantify the effects of various process parameters on the desired properties of CNT polymer composites would provide an efficient and economical means to assessing the material properties of the polymer.
+								</p>
+								<br/>
+								<h2>MODEL GENERATION</h2>
+								<p>
+									To generate a model, we first define a representative volume element, or RVE, the smallest volume over which a measurement can be made that yields a property value representative of the whole. In continuum mechanics for a heterogeneous material, RVE can be considered as a volume that represents a composite statistically, which is small enough to be considered for macroscopic property representation and sufficiently large to ensure the independence of boundary conditions. <span class="important">In these models the choice of statistical RVE is usually not unique, but it should be large enough to represent the filler morphology and spatial distribution and as small as possible to reduce the computation cost.</span> The network of CNTs can then be added to the RVE to compute the conductivity.
+								</p>
+								<figure>
+									<img src="images/page_1/rve.png" alt="" width="40%">
+									<figcaption>Representative Volume Element (RVE)</figcaption>
+								</figure>
+								<br/>
+								<h3>CONTACT ALGORITHM</h3>
+								<p>
+									When CNTs are added one by one to the RVE, they form a connection when the distance between the added CNT and any of the existing CNTs already in the network is close enough. The minimum distance between one CNT and the other CNT must be less than a set tolerance (Ɛ). Since the probability that randomly created CNTs are exactly in contact with the modeling is very small, it is considered that two CNTs are in contact if they are smaller than a certain tolerance. Every time a new CNT is created, finding a network is computationally inefficient, so a model that creates a bounding block that selects a few candidates that are nearby the added CNT is developed. This method allows the contact algorithm to make an efficient search.
+								</p>
+								<figure>
+									<img src="images/page_1/CNT_add_algorithm.png" alt="" width="70%">
+									<figcaption>Step-by-Step Network Formation Algorithm</figcaption>
+								</figure>
+								<br/>
+								<h3>GRAPH-BASED NETWORK</h3>
+								<p>
+									As we fill in CNTs inside the box, the added CNT may be connected to more than one existing CNT. In order to keep track of the <span class="important"> network of connections,</span> we assign a unique id to each CNT and save the connections in graph structure as shown below.
+								</p>
+								<figure>
+									<img src="images/page_1/network.png" alt="" width="60%">
+									<figcaption>Graph network of CNTs</figcaption>
+								</figure>
+								<br/>
+								<p>
+									Since each CNT is connected to a different CNT and the connection point has a resistor-resistor relationship, which is used to calculate the conductivity, it is important to manage the connection type over the network and calculate the conductivity through it. The percolation threshold algorithm is used to track the CNTs, whose center-to-center distance is equal to the diameter of the CNT. To do this we used a breadth-first search algorithm to efficiently search through the network of CNTs to find the path from one end to the opposite end.
+								</p>
+								<br/>
+								<h3>Graph-based Network Analysis</h3>
+								<div class="grid">
+									<figure>
+										<img class="item" src="images/page_1/branch_root_analysis.png">
+										<figcaption>Graph search using bredth-first search algorithm</figcaption>
+									</figure>
+									<figure>
+										<img class="item" src="images/page_1/bfs_gif.gif">
+										<figcaption>Graph search using bredth-first search algorithm</figcaption>
+									</figure>
+								</div>
+
+								<p>
+									When enough CNTs are made such that the connection starts at one side of the bounding box to the other side, it is when the percolation threshold is reached. Percolation in X direction is defined when a conductivity path is achieved from one end to the other in the desired direction. The volume fraction at which percolation happens is defined as the percolation threshold. As we increase the number of CNTs after the percolation threshold, multiple paths could occur, as shown in the figure below.
+								</p>
+								<figure>
+									<img src="images/page_1/percolation_drawings.png" alt="" width="70%">
+									<figcaption>Result of CNT Network at Different Volume Fractions</figcaption>
+								</figure>
+
+								<br/>
+								<h2>STATISTICAL ANALYSIS</h2>
+								<p>
+									Every time a model is generated, a different network composition is formed, resulting in a different material property. To ensure robustness to randomness in model generation, we used monte carlo method to analyze the effects of random variables to the modeling property and apply a setting that minimizes the variance in the simulated material property.
+								</p>
+								<br/>
+								<h3>MONTE CARLO METHOD</h3>
+								<p>
+									A monte carlo simulation is used to model the probability of different outcomes in a process that cannot easily be predicted due to the intervention of random variables. By generating the model a number of times and recording the percolation threshold, we can see how much the results vary. By adjusting several factors that act as random variables in the model generation, we can minimize the variance, making the model more reliable and homogenized. The overall model generation follows the following flowchart.
+								</p>
+								<figure>
+									<img src="images/page_1/algorithm_flowchart.png" alt="" width="70%">
+									<figcaption>Statistical Analysis Flowchart</figcaption>
+								</figure>
+								<br/>
+								<p>
+									There are two approaches to making a homogenized model. We can perform Monte Carlo Simulation to both approaches to analyze and compare the effects of both factors.
+								</p>
+								<br/>
+								<p class="important_underlined">First Approach: Varying Sizes of RVE</p>
+								<p>
+									Simulations with increasing RVE size are performed to analyze the effect of RVE size in the standard deviation of the percolation threshold values. A number of simulation is performed to predict the critical RVE size.
+								</p>
+								<figure>
+									<img src="images/page_1/RVE_size.png" alt="" width="70%">
+									<figcaption>Effects from Varying Sizes of RVE</figcaption>
+								</figure>
+
+								<br/>
+								<p class="important_underlined">Second Approach: Periodic Boundary Conditions</p>
+								<p>
+									Determining a critical size of such statistical RVE, which can predict a homogenized property of interest, is computationally very expensive. Computational homogenization with material periodic boundary conditions is one alternative to reduce the computational complexity. Periodic boundary conditions involve placing fillers that exceed the RVE into their respective position on the opposite face of RVE as if the RVE is part of a larger network of RVEs.
+								</p>
+
+								<div class="grid">
+									<figure>
+										<img class="item" src="images/page_1/periodic_bc.png">
+										<figcaption>Graph search using bredth-first search algorithm</figcaption>
+									</figure>
+									<figure>
+										<img class="item" src="images/page_1/boundary_condition_crop.gif">
+										<figcaption>Graph search using bredth-first search algorithm</figcaption>
+									</figure>
+								</div>
+
+								<br/>
+								<h2>RESULT</h2>
+								<p>
+									Because of the repeated random sampling of fillers within RVE used in the percolation analysis, the percolation threshold obtained varies when the analysis is repeated for the same RVE size as shown in the demonstrations below.
+								</p>
+								<div class="grid">
+									<figure>
+										<img class="item_3" src="images/page_1/perc_1.gif">
+										<img class="item_3" src="images/page_1/perc_2.gif">
+										<img class="item_3" src="images/page_1/perc_3.gif">
+										<img class="item_3" src="images/page_1/perc_4.gif">
+										<img class="item_3" src="images/page_1/perc_5.gif">
+										<figcaption>Graph search using bredth-first search algorithm</figcaption>
+									</figure>
+								</div>
+								<br/>
+								<p>
+									Percolation analysis for each RVE size is conducted for ten realizations and the percolation threshold values are plotted for each RVE size as shown in figure below, represented by unfilled circles. When the cubic RVE size is increased, the statistical variation in the predicted percolation threshold values (unfilled circles) is reduced. For a critical cubic RVE size of 4250 nm the standard deviation of percolation threshold values for ten realizations is less than 0.1, which is considered as a homogenized result. It could be seen that the percolation threshold was reached at different volume fractions. It was found that models with material periodicity had less variance.
+								</p>
+								<figure>
+									<img src="images/page_1/statistical_analysis.png" alt="" width="70%">
+									<figcaption>Statistical analysis illustration of 3D network evolution for percolation</figcaption>
+								</figure>
+								<br/>
+								<p>
+									Simulations with increasing RVE size are performed until the standard deviation of computed apparent property for each RVE size is minimum (<0.1) to predict the critical RVE size. <span class="red_bold"> The percolation analysis using statistical models with translation boundary conditions indicates that the predicted percolation threshold values are dependent on RVE size.</span> The percolation threshold values predicted exhibit statistical variation and are more scattered when the analysis is repeated for the same RVE size. For larger RVE sizes, the scatter in the predicted percolation threshold gradually reduces leading to more homogenized results. Statistical analysis models with Shifting boundary conditions are computationally expensive, requiring many realizations of large random media to predict homogenized results.
+								</p>
+
+								<figure>
+									<img src="images/page_1/standard_deviation.png" alt="" width="70%">
+									<figcaption>Statistical analysis illustration of 3D network evolution for percolation</figcaption>
+								</figure>
+								<br/>
+								<p>
+									It was demonstrated that computational homogenized models with material periodic conditions are independent of RVE size and provide homogenized results and are computationally efficient compared to statistical models.
+								</p>
+								<p>
+									The standard deviation of percolation threshold values for various realizations using models with material periodic conditions is consistently low for all RVE sizes studied. The standard deviation of percolation threshold values with statistical analysis on the other hand is very high for smaller RVE size and gradually reduces towards a homogenized solution for a large critical RVE size. The 3D RVE models with material periodicity presented in this work are attractive for homogeneous mechanical and electrical property estimation of CNT–polymer composite structures.
+								</p>
+
+								<br/>
+								<h3>MODEL VERIFICATION</h3>
+								<p>
+									For a critical cubic RVE size of 4250 nm, the standard deviation of percolation threshold values for ten realizations is less than 0.1, which is considered a homogenized result. After an appropriate RVE size is determined, we can tune other parameters, such as orientation, aspect ratio, and distance threshold of CNTs to adjust our results to the experimental values reported in the literature. For the literature, we referred to <a href="https://iopscience.iop.org/article/10.1088/0957-4484/19/21/215701">this article</a>. Figure below shows the comparison of percolation threshold values for various CNT aspect ratios. Predicted critical RVE size of 4250 nm with varying aspect ratio of CNT is used for this purpose. We can use the reported literature values to calibrate our results. The percolation threshold values averaged over ten simulations match very well with the values reported in the literature.
+								</p>
+								<figure>
+									<img src="images/page_1/validation.png" alt="" width="60%">
+									<figcaption>Comparing Results with Experimental Data</figcaption>
+								</figure>
+
+								<br/>
+								<h2>FUTURE RELATED WORKS</h2>
+								<p>
+									The property of interest may include mechanical properties such as elastic moduli, percolation threshold, electrical and thermal properties, and other averaged quantities that are used to describe physical systems.
+								</p>
+
+								<br/>
+								<h2>AWARDS (FROM GEORGIA TECH)</h2>
+								<ul>
+									<li>Outstanding Undergraduate Research Award in ME Department in annual Undergraduate Research Opportunities Symposium (UROP), Spring 2016</li>
+									<li>2nd place oral presentation award in all engineering departments in annual UROP Symposium, Spring 2015</li>
+									<li>President's Undergraduate Research Award ($1,500), Spring 2016</li>
+									<li>President's Undergraduate Research Award ($1,500), Summer 2016</li>
+									<li>Air Products Undergraduate Research Award ($1,500), Spring 2015</li>
+								</ul>
+							</section>
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>Won Sup Song</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
